@@ -1,7 +1,15 @@
 import React from "react";
 
-function App() {
-  return <div className="App" />;
+function Potato() {
+  return <h1>I like potato</h1>;
 }
 
+function App() {
+  return (
+    <div>
+      <h1>Hello World!</h1>
+      <Potato />
+    </div>
+  );
+}
 export default App;
