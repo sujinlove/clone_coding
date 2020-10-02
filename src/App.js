@@ -6,11 +6,16 @@ class App extends React.Component {
   };
 
   add = () => {
-    console.log("add");
+    this.setState(current => ({
+      // current에 현재 state가 넘어온다.
+      count: current.count + 1 // 그 state의 count에 1을 더한다.
+    }));
   };
 
   minus = () => {
-    console.log("minus");
+    this.setState(current => ({
+      count: current.count - 1
+    }));
   };
 
   render() {

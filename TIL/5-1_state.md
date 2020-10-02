@@ -45,3 +45,66 @@ class App extends React.Component {
 
 state는 객체 형태의 데이터이다.  
 state를 사용하려면 반드시 1) 클래스 컴포넌트 안에서, 2) 소문자를 이용하여 state라고 적으면 된다.
+
+# setState
+
+```
+class App extends React.Component {
+
+  state = {
+
+  };
+
+  add = () => {
+      this.state.count = 1; // 이렇게 state를 직접 변경할 수 없다.
+  }
+
+  render() {
+    return (
+        // JSX
+    );
+  }
+}
+```
+
+리액트는 위의 소스코드처럼 state를 직접 변경하는 코드를 허용하지 않는다.
+
+원래 리액트는 state가 변경되면 render() 함수를 다시 실행하여 변경된 state를 화면에 출력한다.  
+그런데 state를 직접 변경하는 경우에는 render() 함수를 다시 실행하지 않는다.  
+따라서 setState()를 사용하여 간접적으로 state를 변경해주어야한다.
+
+```
+class App extends React.Component {
+  state = {
+    count: 0
+  };
+
+  add = () => {
+    this.setState(current => ({
+      // current에 현재 state가 넘어온다.
+      count: current.count + 1 // 그 state의 count에 1을 더한다.
+    }));
+  };
+
+  minus = () => {
+    this.setState(current => ({
+      count: current.count - 1
+    }));
+  };
+
+  render() {
+    return (
+      <div>
+        <h1>This number is: {this.state.count}</h1>
+        <button onClick={this.add}>Add</button>
+        <button onClick={this.minus}>Minus</button>
+      </div>
+    );
+  }
+}
+```
+
+리액트는 setState() 함수의 호출을 감시한다. setState() 함수가 동작하면, state가 새로운 값으로 바뀌고, render() 함수를 동작시켜서 화면을 업데이트 한다.  
+setState() 함수가 실행될때, 리액트는 이전의 state와 새로운 state를 비교하여, 바뀐 데이터만 업데이트한다.  
+변경 대상이 아닌 키와 키값은 그대로 유지된다.  
+따라서 화면은 바뀌었지만 새로고침은 일어나지 않는다. 이것이 리액트가 화면구성이 빠른 이유이다.
