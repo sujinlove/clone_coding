@@ -18,7 +18,7 @@ class Home extends React.Component {
     } = await axios.get("https://yts-proxy.now.sh/list_movies.json");
     // this.setState({ movies: movies });
     //console.log(movies);
-    this.setState({ movies, isLoading: false }); // ES6에서는 객체의 키와 대입할 변수의 이름이 같으면, 코드를 축약할 수 있다.
+    this.setState({ movies, isLoading: true }); // ES6에서는 객체의 키와 대입할 변수의 이름이 같으면, 코드를 축약할 수 있다.
   };
 
   componentDidMount() {
