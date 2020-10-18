@@ -7,10 +7,12 @@
 .movies {
   .movie {
     background-color: #ffffff;
-    margin-bottom: 70px;
+    margin: 0 15px 70px;
     padding: 20px;
     border-radius: 5px;
     color: #adaeb9;
+    width: calc(50% - 30px);
+    float: left;
     box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
       0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.25);
 
@@ -24,7 +26,7 @@
 
     img {
       position: relative;
-      /* top: -50px; */
+      display: block;
       max-width: 150px;
       width: 100%;
       margin-right: 30px;
@@ -58,6 +60,27 @@
     &__year {
       margin-right: 10px;
       font-size: 14px;
+    }
+  }
+}
+
+//
+// Mobile
+// __________________
+
+@media screen and (max-width: 767px) {
+  .movies {
+    .movie {
+      width: 100%;
+      margin: 0 0 50px;
+
+      a {
+        grid-template-columns: minmax(150px, 1fr);
+      }
+
+      img {
+        margin: 0;
+      }
     }
   }
 }

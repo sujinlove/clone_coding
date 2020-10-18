@@ -10,7 +10,26 @@
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 0 20px;
   background-color: #eff3f7;
   height: 100%;
+}
+
+h1 {
+  margin: 0 0 20px;
+}
+
+.page-title {
+  font-size: 3em;
+  margin-bottom: 30px;
+}
+
+//
+// Mobile
+// __________________
+
+@media screen and (max-width: 767px) {
+  body {
+    padding: 0 15px;
+  }
 }
