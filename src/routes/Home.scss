@@ -14,6 +14,8 @@
   position: fixed;
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,7 +30,10 @@
 // Mobile
 // __________________
 
-@media screen and (max-width: 767) {
+@media screen and (max-width: 767px) {
+  .container {
+    margin: 50px 0 100px;
+  }
   .movies {
     grid-template-columns: 1fr;
     width: 100%;
@@ -39,7 +44,7 @@
 // Desktop
 // __________________
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .container {
     top: 70px;
     padding-left: 115px;
