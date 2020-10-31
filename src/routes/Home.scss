@@ -24,6 +24,8 @@
 
 .movies {
   position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 //
@@ -47,6 +49,10 @@
 @media screen and (min-width: 768px) {
   .container {
     top: 70px;
-    padding-left: 115px;
+    padding-left: 130px;
+  }
+
+  .movies {
+    margin: 0 -15px;
   }
 }
