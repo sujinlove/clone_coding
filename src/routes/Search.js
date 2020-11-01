@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import SearchMovie from "../components/SearchMovie";
+import "./Search.scss";
 
 class Search extends React.Component {
   state = {
@@ -58,14 +59,14 @@ class Search extends React.Component {
     let movieCount = this.state.movies.length;
 
     return (
-      <section className="container">
+      <section className="container search">
         {isLoading ? (
           <div className="loader">
             <span className="loader__text">Loading...</span>
           </div>
         ) : (
-          <form onSubmit={this.handleSubmit}>
-            <div>
+          <form onSubmit={this.handleSubmit} className="search-form">
+            <div className="search-wrapper">
               <div className="input__div">
                 <h2>영화 검색</h2>
                 <input
@@ -75,7 +76,9 @@ class Search extends React.Component {
                   onChange={this.handleChange}
                   placeholder="영화를 검색해보세요"
                 />
-                <button type="submit">검색</button>
+                <button type="submit" className="action primary search">
+                  검색
+                </button>
               </div>
               <div className="search-count">
                 {hasSearch ? (

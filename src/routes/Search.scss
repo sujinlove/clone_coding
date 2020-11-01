@@ -1,0 +1,21 @@
+// Search
+
+//
+// Common
+// __________________
+
+.search {
+  &-form {
+    h2 {
+      margin: 0 0 20px;
+    }
+  }
+
+  &-count {
+    margin: 20px 0;
+  }
+}
+
+.action.search {
+  margin-left: 10px;
+}

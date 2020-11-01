@@ -6,6 +6,7 @@ import Home from "./routes/Home";
 import Navigation from "./components/Navigation";
 import Detail from "./routes/Detail";
 import Search from "./routes/Search";
+import SearchDetail from "./routes/SearchDetail";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path="/about" component={About} />
       <Route path="/movie-detail" component={Detail} />
       <Route path="/search" component={Search} />
+      <Route path="/search-detail" component={SearchDetail} />
     </HashRouter>
   );
 }

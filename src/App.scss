@@ -24,6 +24,38 @@ h1 {
   margin-bottom: 30px;
 }
 
+// input
+
+input {
+  min-width: 300px;
+  height: 30px;
+  font-size: 16px;
+}
+
+// button
+
+button {
+  display: inline-block;
+  text-shadow: none;
+  box-sizing: border-box;
+  padding: 6px 10px;
+  margin: 0;
+  vertical-align: top;
+  cursor: pointer;
+
+  &.primary {
+    background: #000000;
+    color: #fff;
+    border: 1px solid #000000;
+  }
+
+  &.secondary {
+    background: #ffffff;
+    color: #000000;
+    border: 1px solid #ffffff;
+  }
+}
+
 //
 // Mobile
 // __________________

@@ -1,7 +1,6 @@
 import React from "react";
-import "./Detail.scss";
 
-class Detail extends React.Component {
+class SearchDetail extends React.Component {
   componentDidMount() {
     const { location, history } = this.props;
 
@@ -34,16 +33,6 @@ class Detail extends React.Component {
               <br />
               <p>{location.state.rating}</p>
             </div>
-            <div className="movie-content genre">
-              <span className="content-title">Genre : </span>
-              <br />
-              <p>{location.state.genres}</p>
-            </div>
-            <div className="movie-content synopsis">
-              <span className="content-title">Synopsis : </span>
-              <br />
-              <p>{location.state.synopsis}</p>
-            </div>
           </div>
         </div>
       );
@@ -53,4 +42,4 @@ class Detail extends React.Component {
   }
 }
 
-export default Detail;
+export default SearchDetail;
