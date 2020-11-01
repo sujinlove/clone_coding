@@ -6,9 +6,9 @@ function Navigation() {
   return (
     <div className="nav-wrapper">
       <div className="nav">
-        <Link to="/">Home</Link>
+        <Link to="/movie-search">Movie Search</Link>
+        <Link to="/book-search">Book Search</Link>
         <Link to="/about">About</Link>
-        <Link to="/search">Search</Link>
       </div>
     </div>
   );

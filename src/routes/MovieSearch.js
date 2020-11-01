@@ -3,7 +3,7 @@ import axios from "axios";
 import SearchMovie from "../components/SearchMovie";
 import "./Search.scss";
 
-class Search extends React.Component {
+class MovieSearch extends React.Component {
   state = {
     isLoading: true,
     hasSearch: false,
@@ -18,7 +18,7 @@ class Search extends React.Component {
 
     try {
       if (search === "") {
-        this.setState({ movies: [], isLoading: false });
+        this.setState({ movies: [], isLoading: false, hasSearch: false });
         console.log("blank");
       } else {
         const {
@@ -81,10 +81,8 @@ class Search extends React.Component {
                 </button>
               </div>
               <div className="search-count">
-                {hasSearch ? (
-                  <span>검색 개수 : {movieCount}</span>
-                ) : (
-                  <span>검색어를 입력하세요!</span>
+                {hasSearch && (
+                  <span>총 {movieCount}건의 영화가 검색되었습니다.</span>
                 )}
               </div>
               <div className="movies">
@@ -96,6 +94,8 @@ class Search extends React.Component {
                     title={movie.title}
                     poster={movie.image}
                     rating={movie.userRating}
+                    director={movie.director}
+                    actor={movie.actor}
                   />
                 ))}
               </div>
@@ -107,4 +107,4 @@ class Search extends React.Component {
   }
 }
 
-export default Search;
+export default MovieSearch;
