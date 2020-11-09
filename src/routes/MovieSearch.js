@@ -19,7 +19,6 @@ class MovieSearch extends React.Component {
     try {
       if (search === "") {
         this.setState({ movies: [], isLoading: false, hasSearch: false });
-        console.log("blank");
       } else {
         const {
           data: { items }
@@ -32,7 +31,6 @@ class MovieSearch extends React.Component {
             "X-Naver-Client-Secret": SECRET_KEY
           }
         });
-        console.log(items);
         this.setState({ movies: items, isLoading: false });
       }
     } catch (error) {

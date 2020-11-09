@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import SearchBook from "../components/SearchBook";
+import Http from "../api";
 import "./Search.scss";
 
 class BookSearch extends React.Component {
@@ -23,7 +24,7 @@ class BookSearch extends React.Component {
       } else {
         const {
           data: { items }
-        } = await axios.get("/api/v1/search/book.json", {
+        } = await Http.get("/api/v1/search/book.json", {
           params: {
             query: search
           },
