@@ -5,7 +5,6 @@ import "./Book.scss";
 
 function SearchBook({
   id,
-  year,
   title,
   poster,
   price,
@@ -35,11 +34,18 @@ function SearchBook({
           <p className="book__actor">
             <span>가격</span> {price}
           </p>
+          {discount && (
+            <p className="book__actor">
+              <span>할인가격</span> {discount}
+            </p>
+          )}
+
           <p className="book__actor">
-            <span>할인가격</span> {discount}
-          </p>
-          <p className="book__actor">
-            <span>줄거리</span> {description}
+            <span>줄거리</span>
+            {description
+              .replace(/<b>/gi, "")
+              .replace(/<\/b>/gi, "")
+              .replace(/&quot;/gi, "")}
           </p>
         </div>
       </a>
@@ -48,11 +54,10 @@ function SearchBook({
 }
 
 SearchBook.propTypes = {
-  year: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   poster: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  discount: PropTypes.number,
+  price: PropTypes.string.isRequired,
+  discount: PropTypes.string,
   pubDate: PropTypes.number.isRequired,
   publisher: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
