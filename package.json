@@ -42,5 +42,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://sujinlove.github.io/react-TIL/"
+  "homepage": "https://sujinlove.github.io/react-TIL/",
+  "devDependencies": {
+    "eslint-config-react-app": "^6.0.0"
+  }
 }
